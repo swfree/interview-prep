@@ -1,8 +1,9 @@
 var express = require('express');
 var app = express();
+var questions = require('./data.js');
 
 app.get('/', function(req, res) {
-  res.send('Hello world');
+  res.send(questions);
 });
 
 app.listen(3000, function() {
