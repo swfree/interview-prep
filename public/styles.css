@@ -1,0 +1,67 @@
+body {
+  background: #525A75;
+  font-family: Helvetica;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  flex: 1;
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #fff; margin: 1em; padding: 2em;
+}
+
+
+
+.card-css {
+  border-left: 10px solid orange;
+}
+
+.card-js {
+  border-left: 10px solid pink;
+}
+
+.card-html {
+  border-left: 10px solid green;
+}
+
+.card-question {
+/*   text-align: center; */
+  flex: 1;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 3em; /* maybe remove?*/
+  font-size: 1.2em;
+}
+
+.card-actions {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-action-btn {
+  flex: 1;
+  color: grey;
+  text-align: center;
+  background: #fff;
+  border: none;
+  font-size: 1em;
+}
+
+.card-test-expanded {
+  flex: 1;
+  font-weight: normal;
+  background: grey;
+}
