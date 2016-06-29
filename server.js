@@ -3,6 +3,8 @@ var app = express();
 var cors = require('cors');
 var questions = require('./data.js');
 
+app.set('port', (process.env.PORT || 3000));
+
 app.use(cors());
 
 app.use(express.static('public'));
@@ -46,6 +48,6 @@ app.get('/random/html', function(req, res) {
   res.send(filteredQuestions[randomIndex]);
 });
 
-app.listen(3000, function() {
-  console.log('app listening on port 3000...');
+app.listen(app.get('port'), function() {
+  console.log('app listening on port ', app.get('port'));
 });
