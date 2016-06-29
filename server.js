@@ -13,12 +13,12 @@ app.get('/questions', function(req, res) {
   res.send(questions);
 });
 
-app.get('/random', function(req, res) {
+app.get('/slack', function(req, res) {
   var randomIndex = Math.floor(Math.random()*questions.length);
-  res.send(questions[randomIndex]);
+  res.send(questions[randomIndex].question);
 });
 
-app.get('/random/javascript', function(req, res) {
+app.get('/slack/javascript', function(req, res) {
   var filterCriteria = 'javascript';
   var filteredQuestions = questions.filter(function(question) {
     return question.category === filterCriteria;
@@ -28,7 +28,7 @@ app.get('/random/javascript', function(req, res) {
   res.send(filteredQuestions[randomIndex]);
 });
 
-app.get('/random/css', function(req, res) {
+app.get('/slack/css', function(req, res) {
   var filterCriteria = 'css';
   var filteredQuestions = questions.filter(function(question) {
     return question.category === filterCriteria;
@@ -38,7 +38,7 @@ app.get('/random/css', function(req, res) {
   res.send(filteredQuestions[randomIndex]);
 });
 
-app.get('/random/html', function(req, res) {
+app.get('/slack/html', function(req, res) {
   var filterCriteria = 'html';
   var filteredQuestions = questions.filter(function(question) {
     return question.category === filterCriteria;
