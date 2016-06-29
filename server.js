@@ -15,7 +15,19 @@ app.get('/questions', function(req, res) {
 
 app.get('/slack', function(req, res) {
   var randomIndex = Math.floor(Math.random()*questions.length);
-  res.send(questions[randomIndex].question);
+
+  var slackFormat = {
+    "response_type": "in_channel",
+    "text": questions[randomIndex].question,
+    "attachments": [
+      {
+        "title": "Answer",
+        "text": questions[randomIndex].answer
+      }
+    ]
+  };
+
+  res.send(slackFormat);
 });
 
 app.get('/slack/javascript', function(req, res) {
