@@ -43,5 +43,30 @@ module.exports = [
     "category": "javascript",
     "tags": [ "trivia", "javascript" ],
     "timestamp": "Fri Jun 24 2016 16:45:00 GMT-0700 (PDT)"
+  },
+  {
+    "id": 6,
+    "question": "What is the Same-origin policy?",
+    "answer": "A web browser permits scripts contained in a first web page to access data in a second web page, but only if both web pages have the same origin -- i.e. URI scheme, hostname, and port number. Prevents a malicious script on one page from obtaining sensitive data on another page through that page's DOM. Ex: you're logged into your bank site; you go to another random site without logging out; that other site could run some malicious JS code in the background requesting data from the bank, using your session cookies.",
+    "type": "long answer",
+    "category": "html".
+    "tags": [ "trivia", "html" ],
+    "timestamp": "Thu Jun 30 2016 10:43:00 GMT-0700 (PDT)"
+  },
+  {
+    "id": 7,
+    "question": "What is CORS?",
+    "answer": "A technique for relaxing the strictness of the same-origin policy. Stands for Cross-Origin Resource Sharing. It extends HTTP with a new Origin request header and a new Access-Control-Allow-Origin request header. Allows servers to use a header to explicitly list origins that may request a file or to use a wildcard and allow a file to be requested by any site. Like for public APIs!!",
+    "type": "long answer",
+    "tags": [ "trivia", "html" ],
+    "timestamp": "Thu Jun 30 2016 10:50:00 GMT-0700 (PDT)"
+  },
+  {
+    "id": 8,
+    "question": "What is JSONP?",
+    "answer": "Allows a page to receive JSON data from a different domain by adding a <script> element to the page which loads a JSON response with a callback from a different domain. It's another way to get around the strictness of the same-origin policy implemented by browsers.",
+    "type": "long answer",
+    "tags" [ "html" ],
+    "timestamp": "Thu Jun 30 2016 10:52:00 GMT-0700 (PDT)"
   }
 ];
