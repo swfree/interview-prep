@@ -72,7 +72,7 @@ app.post('/slackbutton', function(req, res) {
     "attachments": [
       {
         "title": "Answer:",
-        "text": req.body.payload.callback_id,
+        "text": req.body.payload,
         "color": "#dd99ff"
       }
     ]
