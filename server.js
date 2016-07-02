@@ -39,13 +39,32 @@ app.post('/slack', function(req, res) {
     "attachments": [
       {
         "title": "Answer",
-        "text": questions[randomIndex].answer
+        "text": questions[randomIndex].answer,
+        "color": "#dd99ff"
       }
     ]
   };
 
   res.send(slackFormat);
 });
+
+app.post('/slackbutton', function(req, res) {
+
+  var slackFormat = {
+    "response_type": "in_channel",
+    "text": "answering action button!",
+    "attachments": [
+      {
+        "title": "Answer",
+        "text": "Woo here's the answer!",
+        "color": "#dd99ff"
+      }
+    ]
+  };
+
+  res.send(slackFormat);
+});
+
 
 app.get('/slack/javascript', function(req, res) {
   var filterCriteria = 'javascript';
