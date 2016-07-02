@@ -65,6 +65,12 @@ app.post('/slackbutton', function(req, res) {
   res.send(slackFormat);
 });
 
+app.get('/auth', function(req, res) {
+
+  console.log('IN OAUTH URI REDIRECT: ', req);
+
+  res.send({});
+});
 
 app.get('/slack/javascript', function(req, res) {
   var filterCriteria = 'javascript';
