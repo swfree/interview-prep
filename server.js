@@ -2,10 +2,13 @@ var express = require('express');
 var app = express();
 var cors = require('cors');
 var questions = require('./data.js');
+var bodyParser = require('body-parser');
 
 app.set('port', (process.env.PORT || 3000));
 
 app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static('public'));
 
@@ -67,7 +70,7 @@ app.post('/slackbutton', function(req, res) {
     "attachments": [
       {
         "title": "payload response from slack",
-        "text": req.body.payload,
+        "text": JSON.stringify(req.body.payload),
         "color": "#dd99ff"
       }
     ]
