@@ -63,14 +63,16 @@ app.post('/slack', function(req, res) {
 app.post('/slackbutton', function(req, res) {
   var questionID = Number(req.body.payload.actions[0].value);
   var question = questions[questionID];
+  var questionIDText = 'question id is: ' + questionID;
+  var randomQuestion = 'random question is : ' + questions[10].question;
 
   var slackFormat = {
     "response_type": "in_channel",
-    "text": question.question,
+    "text": req.body.payload.callback_id,
     "attachments": [
       {
         "title": "Answer:",
-        "text": question.answer,
+        "text": questionIDText,
         "color": "#dd99ff"
       }
     ]
