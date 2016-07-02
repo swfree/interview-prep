@@ -38,9 +38,16 @@ app.post('/slack', function(req, res) {
     "text": questions[randomIndex].question,
     "attachments": [
       {
-        "title": "Answer",
-        "text": questions[randomIndex].answer,
-        "color": "#dd99ff"
+        "text": "See answer:",
+        "color": "#dd99ff",
+        "actions": [
+          {
+            "name": "answer",
+            "text": "Answer",
+            "type": "button",
+            "value": "answerid"
+          }
+        ]
       }
     ]
   };
