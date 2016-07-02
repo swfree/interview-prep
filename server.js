@@ -47,7 +47,7 @@ app.post('/slack', function(req, res) {
             "name": "answer",
             "text": "Answer",
             "type": "button",
-            "value": "answerid"
+            "value": questions[randomIndex].id
           }
         ]
       }
@@ -58,14 +58,16 @@ app.post('/slack', function(req, res) {
 });
 
 app.post('/slackbutton', function(req, res) {
+  var questionID = req.body.payload.actions[0].value;
+  var question = questions[questionID];
 
   var slackFormat = {
     "response_type": "in_channel",
     "text": "answering action button!",
     "attachments": [
       {
-        "title": "Answer",
-        "text": "Woo here's the answer!",
+        "title": question.question,
+        "text": question.answer,
         "color": "#dd99ff"
       }
     ]
