@@ -30,6 +30,23 @@ app.get('/slack', function(req, res) {
   res.send(slackFormat);
 });
 
+app.post('/slack', function(req, res) {
+  var randomIndex = Math.floor(Math.random()*questions.length);
+
+  var slackFormat = {
+    "response_type": "in_channel",
+    "text": questions[randomIndex].question,
+    "attachments": [
+      {
+        "title": "Answer",
+        "text": questions[randomIndex].answer
+      }
+    ]
+  };
+
+  res.send(slackFormat);
+});
+
 app.get('/slack/javascript', function(req, res) {
   var filterCriteria = 'javascript';
   var filteredQuestions = questions.filter(function(question) {
