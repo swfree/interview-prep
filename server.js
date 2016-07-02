@@ -39,6 +39,8 @@ app.post('/slack', function(req, res) {
     "attachments": [
       {
         "text": "See answer:",
+        "fallback": "oops slack button didn't work",
+        "callback_id": "interview_bot_answer",
         "color": "#dd99ff",
         "actions": [
           {
