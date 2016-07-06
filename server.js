@@ -3,6 +3,7 @@ var app = express();
 var cors = require('cors');
 var questions = require('./data.js');
 var bodyParser = require('body-parser');
+var allQuestions = require('./my_data.js');
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -14,6 +15,10 @@ app.use(express.static('public'));
 
 app.get('/questions', function(req, res) {
   res.send(questions);
+});
+
+app.get('/data', function(req, res) {
+  res.send(allQuestions);
 });
 
 app.get('/slack', function(req, res) {
