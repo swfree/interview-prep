@@ -1,6 +1,6 @@
 var myQuestions = [];
 
-$.get('http://localhost:3000/data', function(response) {
+$.get('https://murmuring-plains-85898.herokuapp.com/data', function(response) {
   appendToPage(response);
 });
 
